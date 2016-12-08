@@ -141,7 +141,7 @@ public class PurchaseOrderController {
 		
 	}
 	
-	@RequestMapping(value= "/search", produces = MediaType.APPLICATION_JSON_VALUE  method = RequestMethod.GET)
+	@RequestMapping(value= "/search", produces = MediaType.APPLICATION_JSON_VALUE,  method = RequestMethod.GET)
     public List<PurchaseOrder>  searchEvents( final WebRequest webRequest){ 
 		
 		List<PurchaseOrder> poList=new ArrayList<PurchaseOrder>();
