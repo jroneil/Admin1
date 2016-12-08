@@ -1,6 +1,6 @@
-	$("#checkEmailbtn").on("click", function(event) {
+	$("#Submit").on("click", function(event) {
                 $(".server-error").hide();
-		if ($('#checkemailform').valid()) {	
+		if ($('#loginform').valid()) {	
 			var emailId = $("#email").val();
                         var recaptchaValue= $(".hiddenRecaptcha").val();
 			$.ajax({
