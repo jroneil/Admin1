@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>AdmitOne</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+  <div id="login" class="login">
+         
+         <form action="#" th:action="@{/login}" th:object="${userLogin}" method="post">
+                      
+            
+            <label for="userName">User Name:
+            <input  th:field="*{userName}" /></label>
+          
+            <label for="password">Password:
+           <input  th:field="*{password}" />
+            <input type="submit" /></label>
+            </form>
+            
+            
+  </div>
+ <div class="error"> <p th:text="*{errMsg}" /></div>
+  
+ 
+  
+  <div class="container">
+     <th:block th:include="inc/footer"></th:block> 
+</div>
+</body>
+</html>

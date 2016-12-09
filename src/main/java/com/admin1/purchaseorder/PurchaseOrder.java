@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.Data;
+@Data
 @Entity
 public class PurchaseOrder {
 
@@ -42,21 +44,7 @@ public class PurchaseOrder {
 	
 	
 
-	public Long getQty() {
-		return qty;
-	}
-
-	public Long getShowId() {
-		return showId;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public String getUserName() {
-		return userName;
-	}
+	
 	
 	 public String toString() {
 	      StringBuilder result = new StringBuilder();
@@ -89,37 +77,6 @@ public class PurchaseOrder {
 
 	
 
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	public void setQty(Long qty) {
-		this.qty = qty;
-	}
-
-	public void setShowId(Long showId) {
-		this.showId = showId;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public Long getTransactionId() {
-		return transactionId;
-	}
-
-	public void setTransactionId(Long transactionId) {
-		this.transactionId = transactionId;
-	}
-
-	public String getMsg() {
-		return msg;
-	}
-
-	public void setMsg(String msg) {
-		this.msg = msg;
-	}
-
+	
 }
 
