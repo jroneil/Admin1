@@ -23,13 +23,13 @@ $().ready(function() {
 		var showIdTo=$("#showIdTo").val();
 		var rclURL=""
 			if(showIdFrom!=""&&showIdTo!=""){
-				rclURL="/search?showIdFrom="+showIdFrom+"&showIdTo="+showIdTo;
+				rclURL="/api/v1/order/search?showIdFrom="+showIdFrom+"&showIdTo="+showIdTo;
 			}
 		if(showIdFrom!=""&&showIdTo==""){
-			rclURL="/search?showIdFrom="+showIdFrom;
+			rclURL="/api/v1/order/search?showIdFrom="+showIdFrom;
 		}
 		if(showIdFrom==""&&showIdTo!=""){
-			rclURL="/search?&showIdTo="+showIdTo;
+			rclURL="/api/v1/order/search?&showIdTo="+showIdTo;
 		}
 		totalDocs = 0;
 		alert(rclURL);
@@ -38,6 +38,7 @@ $().ready(function() {
 		        type: "GET",
 		        dataType: "json",
 		        success: function(result, status, xhr) {	
+		        	 alert("after\\");
 		        	if (result.length > 0) {
 			        	$.each( result, function( key, record ) {
 			        		totalDocs = totalDocs + record.docCount;
@@ -58,7 +59,7 @@ $().ready(function() {
 		        	 $( "#sysError" ).append( "<h1>System Error try again later</h1>" );
 		        }
 		    });
-		    alert("after);
+		    alert("after");
 	});	
 
 });
