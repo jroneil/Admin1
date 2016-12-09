@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>AdmitOne</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+  <div id="search" class="search">
+ 
+                      
+        
+            <label for="showIdFrom">Show Id From:
+            <input  id="showIdFrom" /></label>
+          
+            <label for="showIdTo">Show Id To:
+             <input  id="showIdTo" /></label>
+            <button id="searchBtn">Search</button>
+           
+         
+            
+  </div>
+  
+
+<table id="eventTable" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Transaction Id</th>
+                <th data-dynatable-column="showId">Event Id</th>
+                 <th data-dynatable-column="userName">Customer</th>
+                 <th data-dynatable-column="qty">Tickets</th>
+            </tr>
+        </thead>
+ 
+        <tfoot>
+            <tr>
+               <th>Transaction Id</th>
+                <th>Event Id</th>
+                 <th>Customer</th>
+                 <th>Tickets</th>
+            </tr>
+        </tfoot>
+    </table>
+
+  <div id="noresults">No Records Found</div>
+  
+  <div class="container">
+     <th:block th:include="inc/footer"></th:block> 
+</div>
+</body>
+</html>
