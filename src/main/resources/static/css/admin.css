@@ -9,10 +9,6 @@
 .error {
 	margin-top:2%;
     margin-left:30%;
-    width: 20%;
-    border: 3px solid red;
-    padding: 10px;
-    background:lightgray;
     color:red;
     font-weight: bold;
 }
@@ -24,4 +20,9 @@
     border: 3px solid #73AD21;
     padding: 10px;
     background:lightgray
+}
+.resultSet
+{
+	margin-left:30%;
+	width:60%;
 }

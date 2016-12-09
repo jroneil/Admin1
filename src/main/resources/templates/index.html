@@ -8,19 +8,20 @@
   <div id="login" class="login">
          
          <form action="#" th:action="@{/login}" th:object="${userLogin}" method="post">
-                      
+            <input id="err" type="hidden"  th:field="*{errMsg}" />          
             
             <label for="userName">User Name:
             <input  th:field="*{userName}" /></label>
           
             <label for="password">Password:
-           <input  th:field="*{password}" />
+           <input  type="password" th:field="*{password}" />
             <input type="submit" /></label>
+            
             </form>
             
             
   </div>
- <div class="error"> <p th:text="*{errMsg}" /></div>
+ <div id="errorDiv" class="error"> <p th:text="*{errMsg}" /></div>
   
  
   
