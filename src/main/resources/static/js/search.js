@@ -1,5 +1,5 @@
 $().ready(function() {
-	$('#eventTable').hide();
+	
 	
 		var dynatable = $('#eventTable').dynatable({
 			features: {
@@ -14,11 +14,14 @@ $().ready(function() {
 			  },
 			  
 			}).data('dynatable');
-
+		$('#eventTable').hide();
+		$('#dynatable-record-count-eventTable').hide();
+		$('.dynatable-per-page').hide();
+		$('#dynatable-pagination-links-eventTable').hide();
 	   
 
 	$("#searchBtn").on("click", function (event) {
-		alert("hi");
+		
 		var showIdFrom=$("#showIdFrom").val();
 		var showIdTo=$("#showIdTo").val();
 		var rclURL=""
@@ -32,26 +35,34 @@ $().ready(function() {
 			rclURL="/api/v1/order/search?&showIdTo="+showIdTo;
 		}
 		totalDocs = 0;
-		alert(rclURL);
+		
 		    $.ajax({
 		        url: rclURL,
 		        type: "GET",
 		        dataType: "json",
 		        success: function(result, status, xhr) {	
-		        	 alert("after\\");
+		        
 		        	if (result.length > 0) {
 			        	$.each( result, function( key, record ) {
 			        		totalDocs = totalDocs + record.docCount;
 			        	});
 			        	$('#eventTable').show();
 			        	$('#noresults').hide();
+			        	$('#dynatable-record-count-eventTable').show();
 			        	dynatable.settings.dataset.originalRecords = result;
 			        	dynatable.settings.dataset.queries.search = '';	  
 			        	dynatable.paginationPage.set(1);
 			        	dynatable.process();
+			        	$('.dynatable-per-page').show();
+			        	$('#dynatable-pagination-links-eventTable').show();
 			        
 		        	} else {
 		        		$('#noresults').show();
+		        		$('#eventTable').hide();
+		        		$('#dynatable-record-count-eventTable').hide();
+		        		$('.dynatable-per-page').hide();
+		        		$('#dynatable-pagination-links-eventTable').hide();
+		        			
 		        	
 		        	}
 		        },
@@ -59,7 +70,7 @@ $().ready(function() {
 		        	 $( "#sysError" ).append( "<h1>System Error try again later</h1>" );
 		        }
 		    });
-		    alert("after");
+		   
 	});	
 
 });

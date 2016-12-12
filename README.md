@@ -2,10 +2,14 @@
 #Rest Springboot Example with thymeleaf
 Need to install lombok to run on Eclipse or add getters and setter  follow directions on web page
 https://projectlombok.org/download.html
+
 The application uses the H2 database and is prefilled with some event 
 SpringBoot is the Framework with SpringData Jpa for the persistent layer and Thymeleaf for the view laver
 The application can be run in eclipse or with maven
 The gradle build is not up to date
+
+ajar can also be built using maven
+mvn packac
 
 Swagger allows you to see all the Rest URL's
 http://localhost:8080/swagger-ui.html
